@@ -114,11 +114,9 @@ public class Navigation{
         if(counter < list.size()-1 && value != list.get(counter)){
             counterUpByOne();
             list.set(counter, value);
-            int i = list.size()-1;
-            while(i >counter){
-                list.remove(i);
-                i -= 1;
-            }
+	    for(int i = list.size()-1; i > counter; i--){
+		list.remove(i);
+	    }
             go_ahead = false;
         }
         /* check for existence and add or not */
